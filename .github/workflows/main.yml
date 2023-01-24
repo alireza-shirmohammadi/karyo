@@ -14,11 +14,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Set env
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         # Don't forget to add environment vars as secrets in repository settings on GitHub
@@ -36,7 +31,8 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }} 
             git pull origin main 
             docker-compose down 
-            echo RELEASE_VERSION=$RELEASE_VERSION >> .env
+            echo ${{github.ref_name}}
+            echo RELEASE_VERSION=${{github.ref_name}} >> .env
             docker-compose up --build -d 
             echo "Deleting old image(s)..."
             docker image prune -a -f
