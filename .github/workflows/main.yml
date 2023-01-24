@@ -34,7 +34,7 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }} 
             git pull origin main 
             docker-compose down 
-            echo ${tag_name}
+            echo ${RELEASE_VERSION}
             docker-compose up --build -d 
             echo "Deleting old image(s)..."
             docker image prune -a -f

@@ -1,7 +1,7 @@
 version: '3'
 services:
   karyo:
-    image: karyo:${tag_name}
+    image: karyo:${RELEASE_VERSION}
     restart: unless-stopped
     build: .
     command: >
