@@ -1,4 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+import json
+
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.shortcuts import render, get_object_or_404, redirect
+
+from Karyo import settings
 from .models import Article, Category
 
 
@@ -41,3 +47,27 @@ def category(request,slug):
     }
     return render(request, 'blog/category.html', context)
 
+
+
+def contact_form(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        website=request.POST.get('website')
+        message=request.POST.get('message')
+        print(request.POST)
+
+        admins_email = [user.email for user in User.objects.filter(is_superuser=True)]
+        message = {'name':name,'email':email,"phone":phone,"website":website,"message":message}
+
+
+        subject='سفارش طراحی سایت'
+        message= json.dumps(message,ensure_ascii=False)
+        print(message)
+        print(type(message))
+        email_from=settings.EMAIL_HOST_USER
+        emails=admins_email
+        send_mail(subject,message,email_from,emails)
+        print('done')
+        return redirect('home')

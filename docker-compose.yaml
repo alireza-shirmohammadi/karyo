@@ -1,0 +1,14 @@
+version: '3'
+services:
+  karyo:
+    image: karyo:1.0.0
+    restart: unless-stopped
+    build: .
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py collectstatic &&
+             python manage.py runserver 0.0.0.0:6030"
+    container_name: karyo
+    ports:
+      - 0.0.0.0:6030:6030

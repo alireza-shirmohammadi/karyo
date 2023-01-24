@@ -536,7 +536,8 @@
                             تماس باما
                         </h2>
                     </div>
-                    <form method="post" name="contact-us" action="">
+                    <form method="post" name="contact-us" action="{%url 'contact_form' %}">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="نام">
@@ -545,10 +546,10 @@
                                 <input type="text" class="form-control" id="email" name="email" placeholder="ایمیل">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="شماره تماس">
+                                <input type="number" class="form-control" id="phone" name="phone" placeholder="شماره تماس">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="websiteUrl" name="websiteUrl" placeholder="وبسایت">
+                                <input type="text" class="form-control" id="website" name="website" placeholder="وبسایت">
                             </div>
                             <div class="col-md-12 form-group">
                                 <textarea class="form-control" id="message" name="message" rows="6" placeholder="متن پیام ..."></textarea>
