@@ -62,7 +62,7 @@ def contact_form(request):
         message = {'name':name,'email':email,"phone":phone,"website":website,"message":message}
 
 
-        subject='سفارش طراحی سایت'
+        subject='سفارش طراحی'
         message= json.dumps(message,ensure_ascii=False)
         print(message)
         print(type(message))
