@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,23 +9,25 @@
     -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Roxy by GetTemplates.co</title>
+    <title>کاریو</title>
     <meta name="description" content="Karyo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="static/blog/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="static/blog/vendor/select2/select2.min.css">
-    <link rel="stylesheet" href="static/blog/vendor/owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="static/blog/vendor/lightcase/lightcase.css">
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static "/blog/vendor/bootstrap/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "/blog/vendor/select2/select2.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "/blog/vendor/owlcarousel/owl.carousel.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "/blog/vendor/lightcase/lightcase.css" %}"/>
+    {# <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> #}
+    <link rel="stylesheet" href="{% static "/blog/css/aos.css"  %}"/>
+
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
+    {# <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet"> #}
 
     <!-- CSS -->
-    <link rel="stylesheet" href="static/blog/css/style.min.css">
-    <link rel="stylesheet" href="static/blog/css/style.rtl.css">
+    <link rel="stylesheet" href="{% static "/blog/css/style.min.css"  %}"/>
+    <link rel="stylesheet" href="{% static "/blog/css/style.rtl.css" %}">
 
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -42,10 +45,25 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-menu"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbar-nav-header">
-            <ul class="navbar-nav ml-auto">
+
+{#            <ul class="navbar-nav ml-auto" style="direction: ltr" >#}
+{#                <li class="nav-item">#}
+{#                    <a id="side-search-open" class="nav-link" href="#">#}
+{#                        <span class="lnr lnr-magnifier"></span>#}
+{#                    </a>#}
+{#                </li>#}
+{#            <li class="nav-item only-desktop">#}
+{#                    <a class="nav-link" id="side-nav-open" href="#">#}
+{#                        <span class="lnr lnr-menu"></span>#}
+{#                    </a>#}
+{#                </li>#}
+{#            </ul>#}
+
+            <ul class="navbar-nav ml-auto" style="direction: rtl">
                 <li class="nav-item">
-                    <a class="nav-link" href="">خونه</a>
+                    <a class="nav-link" href="">خانه</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus">درباره ما</a>
@@ -56,16 +74,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact">تماس با ما</a>
                 </li>
-                <li class="nav-item">
-                    <a id="side-search-open" class="nav-link" href="#">
-                        <span class="lnr lnr-magnifier"></span>
-                    </a>
-                </li>
-                 <li class="nav-item only-desktop">
-                    <a class="nav-link" id="side-nav-open" href="#">
-                        <span class="lnr lnr-menu"></span>
-                    </a>
-                </li>
+{#                <li class="nav-item">#}
+{#                    <a id="side-search-open" class="nav-link" href="#">#}
+{#                        <span class="lnr lnr-magnifier"></span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                 <li class="nav-item only-desktop">#}
+{#                    <a class="nav-link" id="side-nav-open" href="#">#}
+{#                        <span class="lnr lnr-menu"></span>#}
+{#                    </a>#}
+{#                </li>#}
             </ul>
         </div>
     </div>
@@ -103,27 +121,33 @@
 </div>	<div class="jumbotron d-flex align-items-center">
   <div class="container text-center">
                         <div data-aos="flip-right">
-<img src="static/blog/img/logo_karyo.png" alt="Karyo logo" style="width:300px;height:330px;">
+<img src="{% static "/blog/img/logo_karyo.png" %}" alt="Karyo logo" style="width:300px;height:330px;">
   </div>
   </div>
   <div class="rectangle-1"></div>
   <div class="rectangle-2"></div>
   <div class="rectangle-transparent-1"></div>
   <div class="rectangle-transparent-2"></div>
-  <div class="circle-1"></div>
-  <div class="circle-2"></div>
-  <div class="circle-3"></div>
+    <div class="circle-1">
+  	<img src="{% static "/blog/img/ios.png" %}" alt="">
+  </div>
+         <div class="circle-2">
+  	<img src="{% static "/blog/img/swift.png" %}" alt="">
+  </div>
+         <div class="circle-3">
+  	<img src="{% static "/blog/img/mysql.png" %}" alt="">
+  </div>
   <div class="triangle triangle-1">
-  	<img src="static/blog/img/obj_triangle.png" alt="">
+  	<img src="{% static "/blog/img/php.png" %}" alt="">
   </div>
   <div class="triangle triangle-2">
-  	<img src="static/blog/img/obj_triangle.png" alt="">
+  	<img src="{% static "/blog/img/java.png" %}" alt="">
   </div>
   <div class="triangle triangle-3">
-  	<img src="static/blog/img/obj_triangle.png" alt="">
+  	<img src="{% static "/blog/img/android.png" %}" alt="">
   </div>
   <div class="triangle triangle-4">
-  	<img src="static/blog/img/obj_triangle.png" alt="">
+  	<img src="{% static "/blog/img/python.png" %}" alt="">
   </div>
 </div>	<!-- Features Section-->
 <section id="features" class="bg-white">
@@ -134,8 +158,6 @@
                 <h2 class="section-title">
                    برای مشاوره <a href="aboutus" target="_blank">تماس بگیرید</a>
                 </h2>
-                <br>
-                <br>
                 <br>
 
                 <h4>فعالیت ما چیست؟</h4>
@@ -153,15 +175,15 @@
                                 <div class="my-4">
                                     <i class="lnr lnr-cog fs-40"></i>
                                 </div>
-                                <h4>Easy to Customize</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>امکانات کامل</h4>
+                                <p>شما تمام امکانات لازم برای مدیریت و توسعه وب سایت خود را در اختیار خواهید داشت.</p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
                                     <i class="lnr lnr-frame-contract fs-40"></i>
                                 </div>
-                                <h4>Pixel Perfect</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>رعایت استاندارد های جهانی</h4>
+                                <p>ما تمام استانداردهای روز طراحی سایت را در وب سایت شما رعایت خواهیم کرد.</p>
                             </div>
                         </div>
                         <!-- End of Feature Item -->
@@ -171,15 +193,15 @@
                                 <div class="my-4">
                                     <i class="lnr lnr-bubble fs-40"></i>
                                 </div>
-                                <h4>Full Support</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>پشتیبانی کامل</h4>
+                                <p>ما نحوه مدیریت وب سایت را به شما آموزش می‌دهیم و پاسخگوی سوالات شما هستیم</p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
                                     <i class="lnr lnr-magic-wand fs-40"></i>
                                 </div>
-                                <h4>Clean Design</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>طراحی اصولی و چشم نواز</h4>
+                                <p>طراحان ما وب سایتی منحصر به فرد و جذاب برای شما خلق خواهند کرد</p>
                             </div>
                         </div>
                         <!-- End of Feature Item -->
@@ -189,15 +211,15 @@
                                 <div class="my-4">
                                     <i class="lnr lnr-clock fs-40"></i>
                                 </div>
-                                <h4>Ontime Project</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>تحویل به موقع پروژه</h4>
+                                <p>زمانی که با ما قرارداد بستید خیالتان راحت باشد،زمان نداشته باشیم متعهد نمی شویم</p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
                                     <i class="lnr lnr-thumbs-up fs-40"></i>
                                 </div>
-                                <h4>Built with SASS</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                <h4>رضایت مندی</h4>
+                                <p>انرژی مثبتی که یک مشتری راضی به همکاران ما می دهد توان ما را چند برابر می کند پس مشتریانمان را راضی نگه می داریم</p>
                             </div>
                         </div>
                         <!-- End of Feature Item -->
@@ -216,8 +238,8 @@
                 <div class="col-md-12">
                     <div class="row align-items-center text-white">
 
-                        <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
-                            <h4 class="mb-4">طراحی اپلیکیشن اندروید و ios</h4>
+                        <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right" style="direction: rtl">
+                            <h4 class="mb-4">طراحی اپلیکیشن اندروید و ios </h4>
                             <p>
                                 با طراحی اپلیکیشن موبایل  می توانید این فرصت را داشته باشید که ارتباط بیشتری با مشتریان خود برقرار کنید.  اگر کسب و کارتان پتانسیل لازم را داشته باشد، می‌توانید با ساخت اپلیکیشن قدرتمند، کاربردی و زیبا یک پل ارتباطی خوب با مشتری‌ داشته باشید. تیم طراحی نرم افزار کاریو، با مهارت و تجربه طولانی‌مدت خود آماده طراحی اپلیکیشن اندروید و ios برای شما است. اطمینان داشته باشید که کاریو متنوع ترین امکانات و مناسب ترین هزینه ساخت اپلیکیشن را خواهد داشت.
                             </p>
@@ -225,7 +247,7 @@
                         </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
 
                         <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="flip-right">
-                            <img class="my-5" src="static/blog/img/app.svg" alt="">
+                            <img class="my-5" src="{% static "/blog/img/app.svg" %}" alt="">
                         </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
                     </div><!--/ .featurettes-item -->
@@ -245,7 +267,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-md-4 offset-md-2 col-sm-6" data-aos="flip-left">
-                            <img class="my-5" src="static/blog/img/web.svg" alt="">
+                            <img class="my-5" src="{% static "/blog/img/web.svg" %}" alt="">
                         </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
                         <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="fade-left">
@@ -270,7 +292,7 @@
     </div><!--/ .container -->
 
 </section>	<!-- Testimonial Section-->
-<section id="testimonial" class="section-padding bg-fixed bg-white overlay" style="background-image: url(static/blog/img/bg-white.jpg);">
+<section id="testimonial" class="section-padding bg-fixed bg-white overlay" style="background-image: url({% static "/blog/img/bg-white.jpg" %});">
     <div class="container">
         <div class="section-content" data-aos="fade-up">
             <div class="heading-section text-center">
@@ -286,11 +308,11 @@
                         <h4 class="testi-text"> از زحمات شما و همکاران محترم به خاطر صبر و بردباریشون و طراحی خوبشون سپاسگزارم<br> از دید بنده <b>تیم کاریو</b> در کارشون خیلی مسلط هستند و جا داره خسته نباشید بگم خدمتتون.</h4>
                         <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                             <div class="testi-img mr-2">
-                                <img src="static/blog/img/testi-1.jpg" alt="">
+                                <img src="{% static "/blog/img/avatar3.jpg" %}" alt="">
                             </div>
                             <div class="testi-details">
-                                <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                <p class="testi-desc mb-0">Web Designer</p>
+                                <p class="testi-author mb-0 font-weight-bolder">ساناز مشیری</p>
+                                <p class="testi-desc mb-0"></p>
                             </div>
                         </div>
                         
@@ -300,11 +322,11 @@
                         <h4 class="testi-text">خداروشکر دغدغه ای از بابت رفع مشکلات وجود نداشت و هر موردی که اطلاع  <br> داده می شد سریع رفع میشد. سرعت پیگیری هم بسیار عالی بود</h4>
                         <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                             <div class="testi-img mr-2">
-                                <img src="static/blog/img/testi-1.jpg" alt="">
+                                <img src="{% static "/blog/img/avatar2.jpg" %}" alt="">
                             </div>
                             <div class="testi-details">
-                                <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                <p class="testi-desc mb-0">Web Designer</p>
+                                <p class="testi-author mb-0 font-weight-bolder">علیرضا شریعتی</p>
+                                <p class="testi-desc mb-0"></p>
                             </div>
                         </div>
                     </div>
@@ -313,11 +335,11 @@
                         <h4 class="testi-text">از نظر من همکاری با شرکت شما بسیار عالی بود <br> کل فرایند همکاری نظیر طراحی سایت و اپ ، همون چیزی شد که میخواستم</h4>
                         <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                             <div class="testi-img mr-2">
-                                <img src="static/blog/img/testi-1.jpg" alt="">
+                                <img src="{% static "/blog/img/avatar1.jpg" %}" alt="">
                             </div>
                             <div class="testi-details">
-                                <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                <p class="testi-desc mb-0">Web Designer</p>
+                                <p class="testi-author mb-0 font-weight-bolder">فرهاد اکبری</p>
+                                <p class="testi-desc mb-0"></p>
                             </div>
                         </div>
                     </div>
@@ -327,14 +349,15 @@
         </div>
     </div>
 </section>
+
 <!-- End of Testimonial Section-->	<!-- Portfolio Section -->
 <section id="portfolio" class="bg-white">
     <div class="container">
         <div class="section-content">
             <!-- Section Title -->
             <div class="title-wrap">
-                <h2 class="section-title">Our <b>Awesome</b> Works</h2>
-                <p class="section-sub-title">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. <br> pharetra augue. Donec id elit non mi.</p>
+                <h2 class="section-title">برخی از نمونه کار ها</h2>
+                <p class="section-sub-title"></p>
             </div>
             <!-- End of Section Title -->
             <div class="row">
@@ -342,10 +365,10 @@
                 <div class="col-md-12 portfolio-holder mt-3">
                     <!-- Btn Filter -->
                     <div class="filter-button-group btn-filter d-flex justify-content-center">
-                        <a tabindex="0" class="is-checked" data-filter="*">Show All</a>
-                        <a tabindex="0" data-filter=".minimalism">Minimalism</a>
-                        <a tabindex="0" data-filter=".vintage">Vintage</a>
-                        <a tabindex="0" data-filter=".creative">Creative</a>
+                        <a tabindex="0" class="is-checked" data-filter="*">show all</a>
+                        <a tabindex="0" data-filter=".android">android</a>
+                        <a tabindex="0" data-filter=".ios">ios</a>
+                        <a tabindex="0" data-filter=".web">web</a>
                     </div>
                     <!-- End of Btn Filter -->
                     <!-- Portfolio Content -->
@@ -353,12 +376,12 @@
                         <div class="grid-sizer"></div>
                         <div class="gutter-sizer"></div>
                         <!-- Portfolio Item -->
-                        <div class="grid-item minimalism" data-aos="fade-up">
+                        <div class="grid-item android" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-1.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-1.jpg" %}" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-1.jpg" title="Photo-1">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-1.jpg" %}" title="Photo-1">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -374,12 +397,12 @@
                         </div>
                         <!-- End of Portfolio Item -->
                         <!-- Portfolio Item -->
-                        <div class="grid-item vintage" data-aos="fade-up">
+                        <div class="grid-item ios" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-6.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-6.jpg"%}"  alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-6.jpg" title="Ship">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-6.jpg" %}" title="Ship">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -395,12 +418,12 @@
                         </div>
                         <!-- End of Portfolio Item -->
                         <!-- Portfolio Item -->
-                        <div class="grid-item creative grid-item-height" data-aos="fade-up">
+                        <div class="grid-item ios grid-item-height" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-2.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-2.jpg"%}" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-2.jpg" title="Tracy Portrait">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-2.jpg"%}" title="Tracy Portrait">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -416,12 +439,12 @@
                         </div>
                         <!-- End of Portfolio Item -->
                         <!-- Portfolio Item -->
-                        <div class="grid-item creative" data-aos="fade-up">
+                        <div class="grid-item ios" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-7.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-7.jpg" %}" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-7.jpg" title="Guitar">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-7.jpg" %}" title="Guitar">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -437,12 +460,12 @@
                         </div>
                         <!-- End of Portfolio Item -->
                         <!-- Portfolio Item -->
-                        <div class="grid-item vintage" data-aos="fade-up">
+                        <div class="grid-item web" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-4.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-4.jpg"%}" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-4.jpg" title="Bookself">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-4.jpg" %}" title="Bookself">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -458,12 +481,12 @@
                         </div>
                         <!-- End of Portfolio Item -->
                         <!-- Portfolio Item -->
-                        <div class="grid-item creative" data-aos="fade-up">
+                        <div class="grid-item web" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img src="static/blog/img/photo-9.jpg" alt="portfolio-img" class="portfolio-item">
+                                <img src="{% static "/blog/img/photo-9.jpg" %}" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" href="static/blog/img/photo-9.jpg" title="Guitar">
+                                        <a class="img-pop" data-rel="lightcase" href="{% static "/blog/img/photo-9.jpg" %}" title="Guitar">
                                             <span class="lnr lnr-move"></span>
                                         </a>
                                         <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -487,14 +510,14 @@
     </div>
 </section>
 <!-- End of Portfolio Section -->	<!-- Client Section -->
-<section id="client" class="overlay bg-fixed" style="background-image: url(static/blog/img/bg.jpg);">
+<section id="client" class="overlay bg-fixed" style="background-image: url({% static "/blog/img/bg.jpg" %});">
     <div class="container">
         <div class="section-content" data-aos="fade-up">
             <div class="row ">
                 <div class="col-md-12">
                     <!-- Section Title -->
                     <div class="title-wrap mb-5">
-                        <h2>Who love to <span> work</span> with us</h2>
+                        <h2>برخی از مشتریان ما</h2>
                     </div>
                     <!-- End of Section Title -->
                 </div>
@@ -502,22 +525,22 @@
                 <div class="col-md-12 client-holder">
                     <div class="client-slider owl-carousel">
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                         <div class="client-item">
-                            <img class="img-responsive" src="static/blog/img/client.png" alt=" ">
+                            <img class="img-responsive" src="{% static "/blog/img/client.png" %}" alt=" ">
                         </div>
                     </div>
                     <!-- End of Client Holder -->
@@ -592,7 +615,7 @@
     </div>
 </section>
 <!-- End of Reservation Section -->	<!-- Features Section-->
-<section id="cta" class="bg-fixed overlay" style="background-image: url(static/blog/img/bg.jpg);">
+<section id="cta" class="bg-fixed overlay" style="background-image: url({% static "/blog/img/bg.jpg" %});">
     <div class="container">
         <div class="section-content" data-aos="fade-up">
             <div class="row">
@@ -639,19 +662,22 @@
         </div>
     </div>
 </footer>	<!-- External JS -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-	<script src="static/blog/vendor/bootstrap/popper.min.js"></script>
-	<script src="static/blog/vendor/bootstrap/bootstrap.min.js"></script>
-	<script src="static/blog/vendor/select2/select2.min.js "></script>
-	<script src="static/blog/vendor/owlcarousel/owl.carousel.min.js"></script>
-	<script src="static/blog/vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
-	<script src="static/blog/vendor/isotope/isotope.min.js"></script>
-	<script src="static/blog/vendor/lightcase/lightcase.js"></script>
-	<script src="static/blog/vendor/waypoints/waypoint.min.js"></script>
-	 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-	 
+
+    {# <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> #}
+    	<script src="{% static "/blog/js/jquery.js" %}" ></script>
+	<script src="{% static "/blog/vendor/bootstrap/popper.min.js" %}" ></script>
+	<script src="{% static "/blog/vendor/bootstrap/bootstrap.min.js" %}" ></script>
+	<script src="{% static "/blog/vendor/select2/select2.min.js" %}" ></script>
+	<script src="{% static "/blog/vendor/owlcarousel/owl.carousel.min.js" %}" ></script>
+	<script src="{% static "/blog/vendor/stellar/jquery.stellar.js" %}"  type="text/javascript" charset="utf-8"></script>
+	<script src="{% static "/blog/vendor/isotope/isotope.min.js" %}" ></script>
+	<script src="{% static "/blog/vendor/lightcase/lightcase.js" %}" ></script>
+	<script src="{% static "/blog/vendor/waypoints/waypoint.min.js" %}" ></script>
+    	<script src="{% static "/blog/js/aos.js" %}" ></script>
+
+	 {# <script src="https://unpkg.com/aos@next/dist/aos.js"></script> #}
 	<!-- Main JS -->
-	<script src="static/blog/js/app.min.js "></script>
-	<script src="//localhost:35729/livereload.js"></script>
+	<script src="{% static "/blog/js/app.min.js"%}" ></script>
+	<script src="//localhost:35729/livereload.js" ></script>
 </body>
 </html>

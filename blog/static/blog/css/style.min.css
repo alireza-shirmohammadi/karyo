@@ -6,8 +6,12 @@ html, body {
   width: 100%;
   overflow-x: hidden; }
 
+@font-face {
+    font-family: "IRANSans";
+    src: url("../fonts/IRANSans.ttf") format("truetype");
+}
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'IRANSans', sans-serif;
   font-weight: 300; }
 
 h1,
@@ -22,7 +26,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'IRANSans', sans-serif;
   margin-top: 0; }
 
 a {
@@ -293,12 +297,10 @@ section {
   animation: floating-slow ease-in-out 12s infinite; }
 
 .circle-1 {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #fff;
+  width: 80px;
+  height: 80px;
   position: absolute;
   display: block;
-  border-radius: 50%;
   transform-origin: 50% 50%;
   left: 5%;
   top: 50%;
@@ -309,22 +311,18 @@ section {
   height: 70px;
   top: 20%;
   left: 83%;
-  border: 2px solid #fff;
   position: absolute;
   display: block;
-  border-radius: 50%;
   transform-origin: 50% 50%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
 
 .circle-3 {
   top: 80%;
   right: 25%;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fff;
+  width: 90px;
+  height: 90px;
   position: absolute;
   display: block;
-  border-radius: 50%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
 
 @keyframes floating {
@@ -360,7 +358,7 @@ section {
   .triangle-1 img {
     height: 50px;
     width: 50px;
-    transform: rotate(30deg); }
+    transform: rotate(40deg); }
 
 .triangle-2 {
   top: 30%;
@@ -369,24 +367,24 @@ section {
   .triangle-2 img {
     width: 75px;
     height: 75px;
-    transform: rotate(15deg); }
+    transform: rotate(-40deg); }
 
 .triangle-3 {
   top: 80%;
   left: 15%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 10s infinite; }
   .triangle-3 img {
-    width: 45px;
-    height: 45px;
-    transform: rotate(40deg); }
+    width: 70px;
+    height: 70px;
+    transform: rotate(10deg); }
 
 .triangle-4 {
   top: 60%;
   right: 15%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite; }
   .triangle-4 img {
-    width: 45px;
-    height: 45px;
+    width: 65px;
+    height: 65px;
     transform: rotate(-40deg); }
 
 /*=====  End of FORM RECTANGLE ETC  ======*/
