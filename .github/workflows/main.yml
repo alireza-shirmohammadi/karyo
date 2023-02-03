@@ -28,7 +28,9 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           run: tag_name = github.ref_name
           script: |  
-            cd ${{ secrets.PROJECT_PATH }} 
+            cd ${{ secrets.PROJECT_PATH }}
+            git fetch 
+            git stash 
             git pull origin main 
             docker-compose down 
             echo RELEASE_VERSION=${{github.ref_name}} >> .env
